@@ -9,21 +9,31 @@ import UIKit
 
 class EditProfileViewController: UIViewController {
 
+    //MARK: OUTLETS
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var editImageButton: UIButton!
+    @IBOutlet weak var userImage: UIImageView!
+   
+    //MARK: VARIABLES
+    
+    //MARK: LIFE CYCLE
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        editImageButton.layer.cornerRadius = editImageButton.frame.height / 5
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    //MARK: ACTIONS
+    
+    @IBAction func saveButton(_ sender: Any) {
+        ChatManeger.shared.updateData(name: nameTextField.text!, email: emailTextField.text!)
+        dismiss(animated: true)
     }
-    */
+    @IBAction func editImageButton(_ sender: Any) {
+    }
+    //MARK: FUNCTIONS
 
 }
+//MARK: EXTENSION

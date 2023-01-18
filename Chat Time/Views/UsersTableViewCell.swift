@@ -9,9 +9,17 @@ import UIKit
 
 class UsersTableViewCell: UITableViewCell {
 
+    //MARK: OUTLETS
+    @IBOutlet weak var timeMessageLabel: UILabel!
+    @IBOutlet weak var lastMessageLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var userImage: UIImageView!
+    
+    //MARK: LIFE CYCLE
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        userImage.setImageCircler(image: userImage)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
